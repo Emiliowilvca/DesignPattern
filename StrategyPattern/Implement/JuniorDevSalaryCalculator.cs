@@ -1,7 +1,7 @@
 using StrategyPattern.Interfaces;
 using StrategyPattern.Models;
 
-namespace StrategyPattern.Views
+namespace StrategyPattern.Implement
 {
     public class JuniorDevSalaryCalculator : ISalaryCalculator
     {

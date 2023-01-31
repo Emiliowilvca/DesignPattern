@@ -1,4 +1,5 @@
 ﻿using StrategyPattern;
+using StrategyPattern.Implement;
 using StrategyPattern.Models;
 using StrategyPattern.Views;
 
@@ -14,10 +15,13 @@ internal class Program
             new DeveloperReport { Id = 4, Name = "Dev4", Level = DeveloperLevel.Junior, HourlyRate = 24.5, WorkingHours = 140 }
         };
         var calculatorContext = new SalaryCalculator(new JuniorDevSalaryCalculator());
+
         var juniorTotal = calculatorContext.Calculate(reports);
         Console.WriteLine($"Total amount for junior salaries is: {juniorTotal}");
+
         calculatorContext.SetCalculator(new SeniorDevSalaryCalculator());
         var seniorTotal = calculatorContext.Calculate(reports);
+
         Console.WriteLine($"Total amount for senior salaries is: {seniorTotal}");
         Console.WriteLine($"Total cost for all the salaries is: {juniorTotal+seniorTotal}");
     }
