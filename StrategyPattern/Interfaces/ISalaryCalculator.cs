@@ -1,7 +1,9 @@
+using StrategyPattern.Models;
+
 namespace StrategyPattern.Interfaces
 {
     public interface ISalaryCalculator
     {
-         double CalculateTotalSalary();
+         double CalculateTotalSalary(IEnumerable<DeveloperReport> reports);
     }
 }
